@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="animate.css">
+    <style>
+        body {
+        	background: wheat;
+        	padding: 0px;
+        	margin: 0px;
+        }
+        #loader_container {
+        	display: none;
+        	position: fixed;
+        	width: 100%;
+        	height: 100%;
+            left: calc(50% - 50px);
+            top: calc(50% - 50px);
+        }
+        #loader {
+            width: 100px;
+            height: 100px;
+            border-top: 5px solid blue;
+            border-right: 5px solid blue;
+            border-left: 5px solid blue;
+            border-bottom: 5px solid white;
+            border-radius: 50%;
+
+
+	-webkit-animation: rotate-center 1s linear infinite ;
+	        animation: rotate-center 1s linear infinite ;
+        }
+    </style>
+</head>
+<body>
+	<div id="loader_container">
+    	<p id="loader"/>
+	</div>
+    <script type="text/javascript">
+
+		let input;
+		let img;
+		let imgX=0, imgY=0;
+		let mclick=false;
+		let pos = 0;
+
+		function setup() {
+			createCanvas(800, 600);
+			input = createFileInput(handleFile);
+			input.position(0, 0);
+		}
+
+		function draw() {
+		  background(255);
+		  if (img) {
+		  	width = img.width, height = img.height;
+		    image(img, imgX-(pos), imgY-(pos), img.width+pos, img.height+pos);
+		  }
+		}
+
+		function mousePressed() {
+			loadPixels();
+			console.log(pixels);
+			mclick = true;
+		}
+		function mouseReleased() {
+			mclick = false;
+		}
+
+		function mouseMoved() {
+
+		}
+		function mouseDragged() {
+		  imgX+=movedX;
+		  imgY+=movedY;
+		}
+
+		function mouseWheel(event) {
+		  print(event.delta);
+		  pos += event.delta;
+
+		  return false;
+		}
+
+		function handleFile(file) {
+		  if (file.type === 'image') {
+		    img = createImg(file.data, 'image could not be loaded');
+		    img.hide();
+		  } else {
+		    img = null;
+		  }
+		}
+    </script>
+</body>
+</html>
