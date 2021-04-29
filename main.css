@@ -1,0 +1,12 @@
+p {
+	color: red;
+}
+
+button {
+	color: white;
+	background: #1dc7fa;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: 10px solid black;
+	border-image: url(simple_blue_pixel_border.jpg) 50 stretch;
+}
