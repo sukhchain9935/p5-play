@@ -1,12 +1,76 @@
+@font-face {
+  font-family: "Pixeboy";
+  src: url("assets/fonts/pixeboy-font/Pixeboy-z8XGD.ttf") format("woff2");
+       /*url("/fonts/OpenSans-Regular-webfont.woff") format("woff");*/
+}
+@font-face {
+  font-family: "Gamepixies";
+  src: url("assets/fonts/gamepixies-font/Gamepixies-8MO6n.ttf") format("woff2");
+       /*url("/fonts/OpenSans-Regular-webfont.woff") format("woff");*/
+}
+@font-face {
+  font-family: "ElfBoy";
+  src: url("assets/fonts/elf-boy-classic-font/Elfboyclassic-PKZgZ.ttf") format("woff2");
+       /*url("/fonts/OpenSans-Regular-webfont.woff") format("woff");*/
+}
+@font-face {
+  font-family: "ARCADECLASSIC";
+  src: url("assets/fonts/arcadeclassic/ARCADECLASSIC.ttf") format("woff2");
+       /*url("/fonts/OpenSans-Regular-webfont.woff") format("woff");*/
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+}
+section {
+	position: absolute;
+	top: 0;
+	width: 300px;
+	height: 100vh;
+}
+main {
+	float: right;
+	width: calc(100% - 350px);
+	margin: 10px;
+	border: 10px solid black;
+	border-image: url(assets/images/balack_pixel_border.png) 10 round;
+}
+#menu {
+	height: 60%;
+	margin: 5%;
+	border: 10px solid black;
+	border-image: url(assets/images/balack_pixel_border.png) 10 round;
+}
+
+img {
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
+	font: 20px Gamepixies;
+	color: black;
+}
+
 p {
-	color: red;
+	border: 5px solid black;
+	border-image: url(assets/images/balack_pixel_border.png) 10 round;
+	font-family: Gamepixies;
+	color: black;
 }
 
 button {
-	color: white;
-	background: #1dc7fa;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	display: block;
+	width: 90%;
+	margin: 5%;
+	color: black;
+	/*background: #1dc7fa;*/
+	font-family: ARCADECLASSIC;
+	font-size: 23px;	
+	background: transparent;
+	padding: 2px;
 	border: 10px solid black;
-	border-image: url(simple_blue_pixel_border.jpg) 50 stretch;
+	border-image: url(assets/images/balack_pixel_border.png) 10 round;
 }
